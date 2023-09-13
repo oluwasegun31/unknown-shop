@@ -1,13 +1,14 @@
 import { FaQuestion } from "react-icons/fa";
 import { BiCart } from "react-icons/bi";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
 export default function RootLayout() {
+  const navigate = useNavigate();
   return (
     <>
       <header className="w-full xl:p-6 p-4">
         <nav className="flex justify-between items-center border-b-2 border-b-gray-400 pb-1 cursor-pointer">
-          <div>
+          <div onClick={() => navigate("/")}>
             <FaQuestion className="md:text-2xl text-[20px] font-normal text-slate-500" />
           </div>
           <div className="font-Nippo font-medium text-[26px] text-slate-500 md:block hidden cursor-default">
