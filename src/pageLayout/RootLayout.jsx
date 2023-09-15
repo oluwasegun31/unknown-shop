@@ -9,7 +9,7 @@ export default function RootLayout() {
       <header className="w-full xl:p-6 p-4">
         <nav className="flex justify-between items-center border-b-2 border-b-gray-400 pb-1 cursor-pointer">
           <div onClick={() => navigate("/")}>
-            <FaQuestion className="md:text-2xl text-[20px] font-normal text-slate-500" />
+            <FaQuestion className="md:text-2xl text-[20px] font-normal text-slate-500 hover:text-black transition duration-300" />
           </div>
           <div className="font-Nippo font-medium text-[26px] text-slate-500 md:block hidden cursor-default">
             <p>Unknown Store</p>
@@ -20,13 +20,13 @@ export default function RootLayout() {
               className={({ isActive }) =>
                 isActive
                   ? "font-Nippo md:text-[22px] text-[20px] font-medium text-slate-600"
-                  : "font-Nippo md:text-[22px] text-[20px] font-normal text-gray-500"
+                  : "font-Nippo md:text-[22px] text-[20px] font-normal text-gray-500 hover:text-gray-900 transition duration-300"
               }
             >
               Products
             </NavLink>
             <div className="border-l border-l-gray-300 px-2 cursor-pointer">
-              <BiCart className="md:text-3xl text-2xl text-slate-600" />
+              <BiCart className="md:text-3xl text-2xl text-slate-600 hover:text-gray-900 transition duration-300" />
             </div>
           </div>
         </nav>

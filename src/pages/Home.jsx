@@ -20,7 +20,10 @@ export default function Home() {
           Unknown Collections Available.
         </h3>
         <div className="flex justify-between items-center border-t border-t-white mt-10">
-          <Link to={"products"} className="md:text-2xl text-lg font-nornal">
+          <Link
+            to={"products"}
+            className="md:text-2xl text-lg font-nornal hover:text-slate-300 transition-all duration-300"
+          >
             Explore
           </Link>
           <svg
