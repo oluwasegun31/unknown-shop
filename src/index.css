@@ -5,4 +5,5 @@ body{
     max-width: 1400px;
     margin: 0 auto;
     background-color: #f7f7f7;
+    overflow-x: hidden;
 }

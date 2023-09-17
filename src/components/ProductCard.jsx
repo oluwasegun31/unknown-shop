@@ -1,6 +1,8 @@
 import { FaStar } from "react-icons/fa";
 import { BiCart } from "react-icons/bi";
 import { BsArrowReturnRight } from "react-icons/bs";
+import { useContext } from "react";
+import { CartItemContext } from "../context";
 
 export default function ProductCard({ product }) {
   // Product destructure
@@ -13,9 +15,11 @@ export default function ProductCard({ product }) {
   const addZero = (num) => {
     return parseFloat(num + 1000).toFixed(2);
   };
+  // cartItem context
+  const { cart, addCart } = useContext(CartItemContext);
 
   return (
-    <div className="bg-white md:h-[400px] h-[350px] shadow-sm relative group transition-all">
+    <section className="bg-white md:h-[400px] h-[350px] shadow-sm relative group transition-all">
       <div className="flex justify-center items-center w-full h-full">
         <div className="w-[250px] flex justify-center items-center">
           <img
@@ -34,13 +38,16 @@ export default function ProductCard({ product }) {
         <p>₦ {addZero(price)}</p>
       </div>
       <div className="w-[60px] h-[100px] shadow-md bg-white absolute right-0 top-28 text-2xl flex flex-col justify-around items-center rounded-sm overflow-hidden opacity-0 group-hover:opacity-100 group-hover:right-3 transition-all duration-300">
-        <div className="flex justify-center items-center bg-slate-500 w-full h-[50%] cursor-pointer text-white">
+        <div
+          className="flex justify-center items-center bg-slate-500 w-full h-[50%] cursor-pointer text-white"
+          onClick={() => addCart(id, product)}
+        >
           <BiCart />
         </div>
         <div className="flex justify-center items-center w-full h-[50%] cursor-pointer">
           <BsArrowReturnRight />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
