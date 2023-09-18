@@ -1,5 +1,11 @@
 import { FaQuestion } from "react-icons/fa";
-import { BiCart } from "react-icons/bi";
+import {
+  BiCart,
+  BiLogoTwitter,
+  BiLogoGmail,
+  BiLogoInstagram,
+  BiLogoLinkedinSquare,
+} from "react-icons/bi";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { CartBar } from "../components";
 import { useContext } from "react";
@@ -45,9 +51,42 @@ export default function RootLayout() {
           <CartBar />
         </nav>
       </header>
+
       <main className="xl:px-6 xl:pt-4 md:p-4 p-2">
         <Outlet />
       </main>
+
+      <footer className="bg-slate-800 md:px-14 px-8 py-10 font-Nippo">
+        <div className="flex sm:flex-row flex-col sm:gap-0 gap-4 justify-between items-center">
+          <div
+            className="md:text-3xl text-[20px] font-normal text-white cursor-pointer"
+            onClick={() => navigate("/")}
+          >
+            <FaQuestion />
+          </div>
+          <div>
+            <NavLink
+              to={"/products"}
+              className={({ isActive }) =>
+                isActive
+                  ? "font-Nippo md:text-[22px] sm:text-[20px] text-lg font-medium text-white"
+                  : "font-Nippo md:text-[22px] sm:text-[20px] text-lg font-normal text-white"
+              }
+            >
+              Products
+            </NavLink>
+          </div>
+          <div className="text-white lg:text-2xl text-lg text-center leading-[1]">
+            <p>@copyright unknown store 2023</p>
+          </div>
+        </div>
+        <div className="flex justify-center item center text-white mt-10 border-t border-t-white pt-6 sm:text-4xl text-3xl gap-5 ">
+          <BiLogoTwitter className="hover:text-slate-200 transition duration-300 cursor-pointer" />
+          <BiLogoGmail className="hover:text-slate-200 transition duration-300 cursor-pointer" />
+          <BiLogoInstagram className="hover:text-slate-200 transition duration-300 cursor-pointer" />
+          <BiLogoLinkedinSquare className="hover:text-slate-200 transition duration-300 cursor-pointer" />
+        </div>
+      </footer>
     </>
   );
 }

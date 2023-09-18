@@ -1,10 +1,12 @@
 import { useContext } from "react";
-import { ProductContext } from "../context";
-import { MarqueeCard, ProductCard } from "../components";
+import { ProductContext, CartNotifContext } from "../context";
+import { MarqueeCard, ProductCard, CartNotif } from "../components";
 
 export default function Product() {
   // Product context
   const { products } = useContext(ProductContext);
+  // cart notification context
+  const { isAdded } = useContext(CartNotifContext);
   // women's categories
   const women = products.filter((item) => {
     return item.category === "women's clothing";
@@ -21,7 +23,7 @@ export default function Product() {
   });
 
   return (
-    <section className="w-full font-Nippo">
+    <section className="w-full font-Nippo relative">
       <div className="w-full mb-6">
         <h3 className="font-semibold w-full md:text-4xl text-2xl capitalize text-slate-500 border-b border-b-slate-300 md:leading-[2] leading-[1.8] mb-2">
           Women's Category
@@ -65,6 +67,13 @@ export default function Product() {
             return <ProductCard product={items} key={items.id} />;
           })}
         </div>
+      </div>
+      <div
+        className={`fixed top-20 ${
+          isAdded ? "right-2" : "-right-full"
+        } transition-all duration-200 z-50`}
+      >
+        <CartNotif />
       </div>
     </section>
   );

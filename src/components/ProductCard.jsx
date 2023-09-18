@@ -3,8 +3,11 @@ import { BiCart } from "react-icons/bi";
 import { BsArrowReturnRight } from "react-icons/bs";
 import { useContext } from "react";
 import { CartItemContext } from "../context";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductCard({ product }) {
+  // navigate context
+  const navigate = useNavigate();
   // Product destructure
   const { title, id, image, price, rating } = product;
   // function to truncate title
@@ -16,7 +19,7 @@ export default function ProductCard({ product }) {
     return parseFloat(num + 1000).toFixed(2);
   };
   // cartItem context
-  const { cart, addCart } = useContext(CartItemContext);
+  const { addCart } = useContext(CartItemContext);
 
   return (
     <section className="bg-white md:h-[400px] h-[350px] shadow-sm relative group transition-all">
@@ -25,7 +28,7 @@ export default function ProductCard({ product }) {
           <img
             src={image}
             alt="product"
-            className="bg-transparent max-h-[200px] object-contain group-hover:scale-90 transition-all duration-300"
+            className="bg-transparent max-h-[200px] object-contain group-hover:scale-90 transition-all duration-300 group-hover:opacity-80"
           />
         </div>
       </div>
@@ -37,14 +40,17 @@ export default function ProductCard({ product }) {
         <p>{truncateStr(title)}</p>
         <p>₦ {addZero(price)}</p>
       </div>
-      <div className="w-[60px] h-[100px] shadow-md bg-white absolute right-0 top-28 text-2xl flex flex-col justify-around items-center rounded-sm overflow-hidden opacity-0 group-hover:opacity-100 group-hover:right-3 transition-all duration-300">
+      <div className="w-[120px] h-[50px] shadow-md bg-white absolute right-4 top-28 text-2xl flex flex-row justify-around items-center rounded-sm overflow-hidden opacity-0 group-hover:opacity-100 group-hover:right-10 transition-all duration-300">
         <div
-          className="flex justify-center items-center bg-slate-500 w-full h-[50%] cursor-pointer text-white"
+          className="flex justify-center items-center bg-slate-500 w-full h-full cursor-pointer text-white"
           onClick={() => addCart(id, product)}
         >
           <BiCart />
         </div>
-        <div className="flex justify-center items-center w-full h-[50%] cursor-pointer">
+        <div
+          className="flex justify-center items-center w-full h-full cursor-pointer"
+          onClick={() => navigate(`${id}`)}
+        >
           <BsArrowReturnRight />
         </div>
       </div>
