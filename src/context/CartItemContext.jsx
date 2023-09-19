@@ -10,11 +10,15 @@ export default function CartItemProvider({ children }) {
   const [total, setTotal] = useState(0);
   // cart notification context
   const { setIsAdded } = useContext(CartNotifContext);
+  // function to add extra zero's to price
+  const addZero = (num) => {
+    return parseFloat(num * 200).toFixed(2);
+  };
   useEffect(() => {
     const total = cart.reduce((acc, curItem) => {
       return acc + curItem.price * curItem.amount;
     }, 0);
-    setTotal(total);
+    setTotal(addZero(total));
   }, [cart]);
   // add to cart
   const addCart = (id, product) => {

@@ -16,7 +16,7 @@ export default function ProductCard({ product }) {
   };
   // function to add extra zero's to price
   const addZero = (num) => {
-    return parseFloat(num + 1000).toFixed(2);
+    return parseFloat(num * 200).toFixed(2);
   };
   // cartItem context
   const { addCart } = useContext(CartItemContext);

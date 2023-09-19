@@ -12,6 +12,11 @@ export default function CartItem({ item }) {
   const truncateStr = (str) => {
     return str.length > 35 ? str.slice(0, 35) + "..." : str;
   };
+  // function to add extra zero's to price
+  const addZero = (num) => {
+    return parseFloat(num * 200).toFixed(2);
+  };
+
   return (
     <div
       className="flex justify-between items-start mb-4 border-b border-b-slate-300 pb-4 relative"
@@ -51,7 +56,7 @@ export default function CartItem({ item }) {
         <GrClose />
       </div>
       <div className="absolute bottom-3 right-0 text-base">
-        <p>₦ {parseFloat(price * amount).toFixed(2)}</p>
+        <p>₦ {parseFloat(addZero(price) * amount).toFixed(2)}</p>
       </div>
     </div>
   );

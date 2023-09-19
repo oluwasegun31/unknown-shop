@@ -39,7 +39,7 @@ export default function CartBar() {
       </div>
       <div className="flex flex-col justify-between items-center">
         <button
-          className="bg-slate-600 font-Nippo w-full text-[20px] font-semibold py-1 px-3 text-white outline-none capitalize mb-3"
+          className="bg-red-400 font-Nippo w-full text-[20px] font-semibold py-1 px-3 text-white outline-none capitalize mb-3"
           onClick={() => clearCart()}
         >
           Clear Cart
