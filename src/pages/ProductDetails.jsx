@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ProductContext } from "../context";
 import { BsArrowLeft } from "react-icons/bs";
 import { GiPaperArrow } from "react-icons/gi";
-import { Details } from "../components";
+import { Details, Loading } from "../components";
 
 export default function ProductDetails() {
   const navigate = useNavigate();
@@ -11,14 +11,13 @@ export default function ProductDetails() {
   const { id } = useParams();
   // product context
   const { products } = useContext(ProductContext);
-
   // filter the products to return the product with params id
   const filterProduct = products.find((item) => {
-    return item.id === parseInt(id);
+    return item.id === parseInt(id, 10);
   });
   // set loading animation
   if (!filterProduct) {
-    return <h1>Loading....</h1>;
+    return <Loading />;
   }
 
   return (

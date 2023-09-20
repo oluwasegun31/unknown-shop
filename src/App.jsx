@@ -5,8 +5,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./App.css";
-import { Home, Product, ProductDetails } from "./pages";
+import { Home, Product, ProductDetails, Error404 } from "./pages";
 import RootLayout from "./pageLayout/RootLayout";
+
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -14,6 +15,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="products" element={<Product />} />
         <Route path="products/:id" element={<ProductDetails />} />
+        <Route path="*" element={<Error404 />} />
       </Route>
     )
   );

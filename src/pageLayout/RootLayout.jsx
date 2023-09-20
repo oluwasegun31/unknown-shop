@@ -76,7 +76,7 @@ export default function RootLayout() {
               Products
             </NavLink>
           </div>
-          <div className="text-white lg:text-2xl text-lg text-center leading-[1]">
+          <div className="text-white text-lg text-center leading-[1]">
             <p>@copyright unknown store 2023</p>
           </div>
         </div>
