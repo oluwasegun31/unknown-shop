@@ -18,7 +18,7 @@ export default function RootLayout() {
 
   return (
     <>
-      <header className="w-full xl:p-6 p-4 relative">
+      <header className="w-full fixed top-0 left-0 z-30 xl:p-5 p-4 bg-[#f7f7f7]">
         <nav className="flex justify-between items-center border-b-2 border-b-gray-400 pb-1 cursor-pointer">
           <div onClick={() => navigate("/")}>
             <FaQuestion className="md:text-2xl text-[20px] font-normal text-slate-500 hover:text-black transition duration-300" />
@@ -53,7 +53,7 @@ export default function RootLayout() {
         </nav>
       </header>
 
-      <main className="xl:px-6 xl:pt-4 md:p-4 p-2">
+      <main className="xl:px-6 xl:pt-4 md:p-4 p-2 mt-16 mb-6">
         <Outlet />
       </main>
 

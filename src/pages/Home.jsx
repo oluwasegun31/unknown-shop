@@ -4,7 +4,7 @@ import mobileHero from "../assets/wallhaven-g8813d_500x750.png";
 
 export default function Home() {
   return (
-    <section className="w-full sm:h-[82vh] h-[88vh] relative">
+    <section className="w-full sm:h-[82vh] h-[90vh] relative">
       <picture>
         <source
           srcSet={mobileHero}
