@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import heroImg from "../assets/wallhaven-6kg2qw_1300x600.png";
 import mobileHero from "../assets/wallhaven-g8813d_500x750.png";
+
 export default function Home() {
   return (
     <section className="w-full sm:h-[82vh] h-[88vh] relative">

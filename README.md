@@ -1,6 +1,6 @@
 # The.Unknown Store: E-commerce Website
 
-![Project Screenshot](./src/Assets/Images/Screenshot.png)
+![Project Screenshot](<./src/assets/Screenshot%20(203).png>)
 
 The.Unknown Store is a modern e-commerce website built using Vite, Tailwind CSS, GSAP, and the FakeStoreAPI. It provides users with a platform to explore and purchase a variety of products.
 
@@ -46,7 +46,7 @@ The.Unknown Store is designed to offer a seamless online shopping experience for
 
 - Vite: Building and bundling the project.
 - Tailwind CSS: Styling the website with utility-first classes.
-- GSAP (GreenSock Animation Platform): Adding animations and interactivity.
+- GSAP (GreenSock Animation Platform): Adding animations and interactivity. (not implemented yet)
 - FakeStoreAPI: Simulating product data for testing and development.
 
 ## Contributing

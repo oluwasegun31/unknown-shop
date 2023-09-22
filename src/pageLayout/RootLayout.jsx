@@ -15,6 +15,7 @@ export default function RootLayout() {
   const navigate = useNavigate();
   const { setIsOpen } = useContext(CartBarContext);
   const { cart } = useContext(CartItemContext);
+
   return (
     <>
       <header className="w-full xl:p-6 p-4 relative">
